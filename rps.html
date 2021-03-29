@@ -1,75 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock-Paper-Scissors!</title>
 </head>
-<body>
-    <script>
 
-        function getComputerSelection(){
-            switch (Math.floor(Math.random()*3) + 1){
-                case 1: return "Rock";
-                case 2: return "Paper";
-                case 3: return "Scissors";
-            }
-        }
+<body class="container">
+    <header></header>
+    <div class="playscreen">
+        <div class="playfield">
+            <p><div class="counter" id="computer">0</div></p>
+            <p><div class="gamestate" id="gamestate"> </div></p>
+            <p><div class="counter" id="player">0</div></p>
+        </div>
 
-        function getPlayerSelection(){
-            for (let i=0;i===0;i=0)
-            {
-                let playerSelection = prompt("What's your move?");
-                playerSelection = capitalize(playerSelection);
-                if (playerSelection==="Rock" || playerSelection==="Paper" || playerSelection==="Scissors"){
-                    return playerSelection;
-                }
-                else { alert("I don't know what that is. Please enter 'rock','paper' or 'scissors'");}
-            }
-        }
-
-        function playRound(playerSelection, computerSelection){
-            if (playerSelection===computerSelection) {
-                return `It's a Tie! Both played ${playerSelection}`;
-                }
-            else {
-                switch (playerSelection+computerSelection){
-                    case "PaperRock":
-                    case "RockScissors":
-                    case "ScissorsPaper": 
-                        return `You Win! ${playerSelection} beats ${computerSelection}`;
-                    default:
-                        return `You Lose! ${computerSelection} beats ${playerSelection}`;
-                }
-            }
-        }
-
-        function game(){
-            let playerSelection, computerSelection;
-            let counter=0;
-            let gameState;
-            for (i=0;i<5;i++){
-                playerSelection = getPlayerSelection();
-                computerSelection = getComputerSelection();
-                gameState = playRound(playerSelection, computerSelection);
-                console.log(gameState);
-                if (gameState[4]==='W'){counter++;}
-                if (gameState[4]==='L'){counter--;}
-                console.log(`Count: ${counter}`);
-            }
-            console.log(`Final count: ${counter}`);
-            if (counter>0){console.log('Congratulations! You win the game! Wanna try again?');}
-            if (counter<0){console.log('Too bad... You lose the game. Maybe try again?');}
-            if (counter===0){console.log('The game ends in a tie! How about another one?');}
-        }
-
-
-        function capitalize(string){
-            string = string.toLowerCase();
-            string = string[0].toUpperCase() + string.slice(1);
-            return string;
-        }
-
-    </script>
+        <div class="buttonlist">
+            <button class="button rock" id="Rock">Rock</button>
+            <button class="button paper" id="Paper">Paper</button>
+            <button class="button scissors" id="Scissors">Scissors</button>
+        </div>
+    </div>
 </body>
+
 </html>
+<script src="script.js"></script>
