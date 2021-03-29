@@ -29,7 +29,7 @@ function playHand(e) {
             case "ScissorsPaper":
                 return `You Win! ${playerSelection} beats ${computerSelection}`;
             default:
-                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                return `You  Lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
 }
